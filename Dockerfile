@@ -24,4 +24,4 @@ COPY . .
 EXPOSE 5000
 
 # ---- Wait for PostgreSQL to be ready, then migrate and start ----
-CMD ["bash", "-c", "until nc -z db 5432; do echo ' Waiting for PostgreSQL...'; sleep 2; done; echo 'DB ready!'; flask db upgrade && gunicorn -b 0.0.0.0:5000 'app:app'"]
+CMD ["bash", "-c", "until nc -z db 5432; do echo 'Waiting for PostgreSQL...'; sleep 2; done; echo 'DB ready!'; flask db upgrade; gunicorn -b 0.0.0.0:5000 'app:create_app'"]
