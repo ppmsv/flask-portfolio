@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}My Portfolio{% endblock %}</title>
+  <link rel="icon" href="{{ url_for('static', filename='icons/favicon.png') }}" type="image/png">
+  <!-- ✅ Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+ <div id="particles-js"></div>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+  <div class="container">
+    <!-- โลโก้ / ชื่อเว็บ -->
+    <a class="navbar-brand fw-bold" href="#">PIMMADA</a>
+
+  
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- menu -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto"> 
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Tech Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+      <ul class="navbar-nav social-links">
+      <li><a href="https://github.com/ppmsv" target="_blank"><img src="{{ url_for('static', filename='icons/github-mark-white.png') }}" alt="GitHub"></a></li>
+      <li><a href="https://www.linkedin.com/in/pimmada-intanin-0b91a6387/" target="_blank"><img src="{{ url_for('static', filename='icons/LI-In-Bug.png') }}" alt="LinkedIn"></a></li>
+    </ul>
+    </div>
+  </div>
+</nav>
+
+  <!--  Section Content -->
+  {% block content %}{% endblock %}
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+  <div class="container">
+    <!-- Social Icons -->
+    <div class="mb-2">
+      <a href="https://github.com/ppmsv" target="_blank" class="social-link">
+        <img src="static/icons/github-mark-white.png" alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/pimmada-intanin-0b91a6387/" target="_blank" class="social-link">
+        <img src="static/icons/LI-In-Bug.png" alt="LinkedIn">
+      </a>
+    </div>
+    <p class="mb-0">© 2025 Pimmada Intanin | Full Stack Developer</p>
+  </div>
+</footer>
+ 
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 60 },
+      "color": { "value": "#ffffff" },
+      "shape": { "type": "circle" },
+      "opacity": {
+        "value": 0.6,
+        "random": true
+      },
+      "size": {
+        "value": 3,
+        "random": true
+      },
+      "move": {
+        "enable": true,
+        "speed": 1.5,
+        "direction": "none",
+        "out_mode": "out"
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 120,
+        "color": "#ffffff",
+        "opacity": 0.3,
+        "width": 1
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "repulse" }
+      },
+      "modes": {
+        "repulse": { "distance": 100 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    document.body.style.paddingTop = navbar.offsetHeight + 'px';
+
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 100) {
+        navbar.classList.add('hidden'); // scroll down → ซ่อน
+      } else {
+        navbar.classList.remove('hidden'); // scroll up → แสดง
+      }
+      lastScroll = currentScroll;
+    });
+  });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script>
+  AOS.init({
+    duration: 800,
+    once: false
+  });
+</script>
+
+<script>
+const ball = document.querySelector('.interactive-ball');
+
+document.addEventListener('mousemove', (e) => {
+  const windowHeight = window.innerHeight;
+  const mouseY = e.clientY;
+
+ 
+  const topPos = (mouseY / windowHeight) * 100; 
+  ball.style.top = `${topPos}%`;
+
+  
+  const offsetX = (e.clientX - window.innerWidth/2)/30; 
+  ball.style.transform = `translateY(-50%) translateX(${offsetX}px)`;
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block title %}Pimmada{% endblock %}
+
+{% block content %}
+<!-- Home Section -->
+<section id="home" class="py-5">
+  <div class="container">
+    <h1 class="home-title">
+      <span>Hi,</span>
+      <span>I'm <span class="highlight">Pimmada Intanin 👋</span></span>
+      <span>Computer Science Student</span>
+      <span>Full Stack Developer</span>
+    </h1>
+    <a href="#projects" class="btn btn-primary px-4 mt-3">View My Project</a><div class="scroll-hint">↓ Scroll Down</div>
+    <div class="bouncing-balls">
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="ball"></div>
+      <div class="interactive-ball"></div>
+</div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+     
+      <div class="col-md-4 text-center" data-aos="fade-right" data-aos-delay="200">
+        <img src="{{ url_for('static', filename='images/profile.png') }}"
+             class="profile-img"
+             alt="Profile">
+      </div>
+      <div class="col-md-8" data-aos="fade-left" data-aos-delay="400">
+        <h2>About Me</h2>
+        <p><span class="highlight">Hi! I'm Pimmada Intanin, a Computer Science student at Silpakorn University.</span> I'm passionate about building modern full-stack web applications with Python, Flask, React, and PostgreSQL. I love solving problems, learning fast, and collaborating to create efficient, scalable solutions.</p>
+        <div class="about-buttons mt-4" data-aos="fade-up">
+        <a href="#contact" class="btn btn-primary px-4">Contact Me</a>
+      </div>
+    </div>
+      </div>
+      <div class="floating-laptop" data-aos="fade-left">
+        <img src="{{ url_for('static', filename='images/laptop3d.png') }}" 
+            alt="3D Laptop" class="img-fluid laptop-img">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section id="tech-stack" class="py-5">
+  <div class="container text-center">
+    <h2 data-aos="fade-up">My Tech Stack</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Technologies I've been working with currently</p>
+
+    <div class="row justify-content-center mt-4">
+     
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="200">
+        <img src="{{ url_for('static', filename='icons/python-logo-only.png') }}" class="tech-icon" alt="Python">
+        <p>Python</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="300">
+        <img src="{{ url_for('static', filename='icons/flask-logo.svg') }}" class="tech-icon" alt="Flask">
+        <p>Flask</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="400">
+        <img src="{{ url_for('static', filename='icons/logo_dark.svg') }}" class="tech-icon" alt="React">
+        <p>React</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="500">
+        <img src="{{ url_for('static', filename='icons/elephant.png') }}" class="tech-icon" alt="PostgreSQL">
+        <p>PostgreSQL</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="700">
+        <img src="{{ url_for('static', filename='icons/HTML5_logo_and_wordmark.svg') }}" class="tech-icon" alt="HTML5">
+        <p>HTML</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="800">
+        <img src="{{ url_for('static', filename='icons/CSS3_logo_and_wordmark.svg') }}" class="tech-icon" alt="CSS3">
+        <p>CSS</p>
+      </div>
+      <div class="col-4 col-md-2" data-aos="zoom-in" data-aos-delay="900">
+        <img src="{{ url_for('static', filename='icons/JavaScript-logo.png') }}" class="tech-icon" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Project -->
+<section id="projects">
+  <div class="container">
+    <h2 data-aos="fade-up">My Projects</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Some of the projects I've built recently</p>
+
+    <div class="row justify-content-center">
+      <!-- Project Card -->
+      <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/project1.png') }}" alt="Project 1">
+          <div class="project-info">
+            <h3>Healthy Lifestyle App – Sugar Reduction</h3>
+            <p>A web and mobile application designed to help users monitor and reduce their daily sugar intake. The project emphasizes intuitive UI/UX design and user engagement through personalized insights and progress tracking.</p>
+          </div>
+           <div class="project-footer">
+            <span class="year">2024</span>
+            <a href="https://www.figma.com/proto/85XMkrGpN0d0trU5DdOSmb/Untitled?node-id=10-2&p=f&t=506YebCMlVfeBRYS-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A766&show-proto-sidebar=1" target="_blank" class="project-link">View Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="300">
+        <div class="project-card">
+          <img src="{{ url_for('static', filename='images/project2.png') }}" alt="Project 2">
+          <div class="project-info">
+            <h3>Movie Ticket Booking Website</h3>
+            <p>A web application designed for browsing movies, selecting showtimes and seats, and booking tickets online.</p>
+          </div>
+          <div class="project-footer">
+            <span class="year">2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section Contact -->
+<section id="contact">
+  <div class="container">
+    <h2 data-aos="fade-up">Contact Me</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Get in touch with me for collaborations or inquiries</p>
+    <form class="contact-form" action="{{ url_for('main.contact') }}" method="POST" data-aos="fade-up" data-aos-delay="200">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Your email address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" placeholder="Write your message..." rows="6" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+      <div class="contact-info mt-4">
+        <p>Email: <a href="mailto:pimmada@example.com">pimmada@example.com</a></p>
+        <p>Phone: <a href="tel:+66912345678">+66 912 345 678</a></p>
+      </div>
+    </form>
+  </div>
+</section>
+<!-- Flash messages -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="mt-3">
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+{% endblock %}
