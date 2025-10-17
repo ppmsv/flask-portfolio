@@ -33,12 +33,12 @@ def contact():
     flash("Your message has been sent successfully!", "success")
     return redirect(url_for('main.home'))
     
-@main.route('/test-db')
+@main.route("/test-db")
 def test_db():
     try:
-        # ตรวจสอบเชื่อมต่อและ query
-        with db.engine.connect() as conn:
-            result = conn.execute("SELECT 1").all()
-        return jsonify({"status": "success", "result": result})
+        # ใช้ text() แปลง SQL string ให้ executable
+        result = db.session.execute(text("SELECT 1"))
+        value = result.scalar()  # ดึงค่า
+        return jsonify({"status": "ok", "value": value})
     except Exception as e:
         return jsonify({"status": "error", "error": str(e)})
