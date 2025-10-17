@@ -9,7 +9,7 @@ main = Blueprint('main', __name__)
 def home():
     return render_template("index.html")
 
-@main.route("/contact", methods=["POST"])
+@main.route("/contact", methods=["GET", "POST"])
 def contact():
     full_name = request.form.get('fullName')
     email = request.form.get('email')
