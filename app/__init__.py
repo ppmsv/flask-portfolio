@@ -18,7 +18,7 @@ def create_app():
     # DATABASE
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
     'DATABASE_URL',
-    'postgresql://postgres:VpubzdWFoJEpVTpJZCalmYfoAMFNQvqh@postgres.railway.internal:5432/railway'
+    'postgresql://postgres:ppgpQgsyYbMypYtKNNOPDNTkFeVMgrWL@postgres.railway.internal:5432/railway'
      )
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
